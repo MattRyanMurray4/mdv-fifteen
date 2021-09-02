@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <tv-shows-list
+      [shows]="shows$ | async"
+      (selected)="selectShow($event)"
+      (deleted)="deleteShow($event)"
+    ></tv-shows-list>
+  </div>
+  <div class="col-50" layout="row" layout-align="center center">
+    <tv-show-details
+      [form]="form"
+      [show]="selectedShow$ | async"
+      (saved)="saveShow($event)"
+      (cancelled)="cancel()"
+    ></tv-show-details>
+  </div>
+</div>

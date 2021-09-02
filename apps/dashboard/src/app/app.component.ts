@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@tv/api-interfaces';
 
 @Component({
   selector: 'tv-root',
@@ -8,6 +6,9 @@ import { Message } from '@tv/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title = 'TV-Application';
+  links = [
+    { path: '/', icon: 'home', title: 'Login' },
+    { path: 'shows', icon: 'view_list', title: 'TV-Shows' },
+  ];
 }
